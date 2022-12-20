@@ -1,0 +1,26 @@
+﻿@using hometask_16.Models
+@model List<Teacher>
+
+
+
+
+<div class="container mt-4">
+    <div class="cards row">
+        @foreach (var item in @Model)
+        {
+            <div class="card p-0 me-3" style="width: 18rem;text-align:center;">
+                <img src="https://thumbs.dreamstime.com/b/abstract-sign-avatar-men-icon-male-profile-white-symbol-gray-circle-background-vector-illustration-avatar-144168114.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name @item.Surname</h5>
+                    <p class="card-text">@item.Age years.</p>
+                    <p>
+                        Group:
+                        <button class="btn btn-outline-success p-0 ps-2 pe-2 h-25">
+                            @item.GroupNo
+                        </button>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

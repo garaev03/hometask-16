@@ -1,0 +1,32 @@
+﻿@using hometask_16.Models;
+
+@model List<Student>
+
+<div class="container mt-4 ">
+    <div class="cards d-flex row justify-content-between">
+        @foreach (var item in @Model)
+        {
+            <div class="card p-0 col-4 me-4 mb-4" style="width: 18rem;text-align:center;">
+                @if (!item.Gender)
+                {
+                    <img src="https://thumbs.dreamstime.com/b/grey-woman-avatar-design-ai-supported-81266488.jpg" class="card-img-top" alt="...">
+                }
+                else
+                {
+                    <img height="253" src="https://thumbs.dreamstime.com/b/abstract-sign-avatar-men-icon-male-profile-white-symbol-gray-circle-background-vector-illustration-avatar-144168114.jpg" class="card-img-top" alt="...">
+                }
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name @item.Surname</h5>
+                    <p class="card-text">Grade: @item.Grade </p>
+                    <p>
+                        Group:
+                        <button class="btn btn-outline-success p-0 ps-2 pe-2 h-25">
+                            @item.GroupNo
+                        </button>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

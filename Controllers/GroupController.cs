@@ -5,9 +5,7 @@ namespace hometask_16.Controllers
 {
     public class GroupController : Controller
     {
-        public IActionResult Index()
-        {
-            List<Group> groups = new()
+        List<Group> groups = new()
             {
                 new Group
                 {
@@ -46,7 +44,20 @@ namespace hometask_16.Controllers
                     GroupNo="BB-203"
                 },
             };
+        public IActionResult Index()
+        {
             return View(groups);
+        }
+         
+        public IActionResult No(int Id)
+        {
+            foreach (var item in groups)
+            {   
+                if(item.Id==Id)
+                    return View(item);
+            }
+
+            return Json("error");
         }
     }
 }
